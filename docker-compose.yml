@@ -1,0 +1,26 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0.35
+    container_name: mysql-8.0.35
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./my8.ini:/etc/mysql/my.cnf
+  artemis-jessie:
+    image: "quay.io/artemiscloud/activemq-artemis-broker-init:1.0.18"
+    container_name: artemis-jessie
+    restart: always
+    ports:
+      - "61616:61616"
+      - "8186:8186"
+      - "8161:8161"
+    environment:
+      AMQ_USER: "root"
+      AMQ_PASSWORD: "root"
+    volumes:
+      - ./etc:/home/jboss/broker/etc
+      - ./log:/home/jboss/broker/log
