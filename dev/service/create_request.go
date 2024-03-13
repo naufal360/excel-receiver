@@ -190,7 +190,9 @@ func (s *sendRequest) checkMandatory(reqID string, rows [][]string) (queueList [
 					queue.Condition = col
 				case "price":
 					if col != "" {
-						price, _ = strconv.ParseFloat(col, 64)
+						if price, err = strconv.ParseFloat(col, 64); err != nil {
+							return queueList, "failed", ierr.NewF(constant.InvalidRowData, "")
+						}
 						queue.Price = price
 					}
 				case "color":
@@ -203,7 +205,9 @@ func (s *sendRequest) checkMandatory(reqID string, rows [][]string) (queueList [
 					queue.Material = col
 				case "weight_kg":
 					if col != "" {
-						weight, _ = strconv.ParseFloat(col, 64)
+						if weight, err = strconv.ParseFloat(col, 64); err != nil {
+							return queueList, "failed", ierr.NewF(constant.InvalidRowData, "")
+						}
 						queue.WeightKG = weight
 					}
 				}
