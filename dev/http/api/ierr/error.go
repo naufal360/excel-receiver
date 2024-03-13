@@ -3,6 +3,7 @@ package ierr
 import (
 	"errors"
 	"excel-receiver/constant"
+	"fmt"
 	"net/http"
 )
 
@@ -23,7 +24,7 @@ func mapMessage(code constant.ResCode, args string) string {
 		return "invalid row data"
 
 	case constant.EmptyRowMandatory:
-		return "empty row mandatory"
+		return fmt.Sprintf("empty row mandatory column %s", args)
 
 	case constant.FileSizeLimit:
 		return "file size more than 128kb"

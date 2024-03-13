@@ -150,42 +150,67 @@ func (s *sendRequest) readCSV(file multipart.File, filename, reqID string) (queu
 }
 
 func (s *sendRequest) checkMandatory(reqID string, rows [][]string) (queueList []entity.Queue, status string, err error) {
+	mandatoryColumns := map[string]bool{
+		"uniqid":      false,
+		"title":       false,
+		"description": false,
+		"condition":   false,
+		"price":       false,
+	}
 
 	for idx, row := range rows {
 		if idx == 0 {
-			if row[0] != "uniqid" ||
-				row[1] != "title" ||
-				row[2] != "description" ||
-				row[3] != "condition" ||
-				row[4] != "price" {
-				return queueList, "failed", ierr.NewF(constant.EmptyRowMandatory, "")
+			for _, col := range row {
+				if _, ok := mandatoryColumns[col]; ok {
+					mandatoryColumns[col] = true
+				}
+			}
+
+			// Check if all mandatory columns are present
+			for col, present := range mandatoryColumns {
+				if !present {
+					return queueList, "failed", ierr.NewF(constant.EmptyRowMandatory, col)
+				}
 			}
 		} else {
 			var price float64
 			var weight float64
 
 			queue := entity.Queue{
-				RequestID:   reqID,
-				UniqID:      row[0],
-				Description: row[2],
-				Condition:   row[3],
-				Color:       row[5],
-				Size:        row[6],
-				AgeGroup:    row[7],
-				Material:    row[8],
+				RequestID: reqID,
 			}
 
-			if row[4] != "" || row[9] != "" {
-				price, _ = strconv.ParseFloat(row[4], 64)
-				queue.Price = price
-
-				weight, _ = strconv.ParseFloat(row[9], 64)
-				queue.WeightKG = weight
+			for i, col := range row {
+				switch colName := rows[0][i]; colName {
+				case "uniqid":
+					queue.UniqID = col
+				case "description":
+					queue.Description = col
+				case "condition":
+					queue.Condition = col
+				case "price":
+					if col != "" {
+						price, _ = strconv.ParseFloat(col, 64)
+						queue.Price = price
+					}
+				case "color":
+					queue.Color = col
+				case "size":
+					queue.Size = col
+				case "age_group":
+					queue.AgeGroup = col
+				case "material":
+					queue.Material = col
+				case "weight_kg":
+					if col != "" {
+						weight, _ = strconv.ParseFloat(col, 64)
+						queue.WeightKG = weight
+					}
+				}
 			}
 
 			queueList = append(queueList, queue)
 		}
 	}
-
 	return queueList, status, err
 }
