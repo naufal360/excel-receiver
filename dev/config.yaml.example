@@ -2,8 +2,10 @@ server:
   mode: debug
   port: 5000
   shutdown_timeout: 10s
+  sheet_name: Worksheet
+  upload_dir: /storage/upload
   endpoint:
-    product_list: "/upload"
+    excel_upload: /excel-upload
 
 artemis:
   host: localhost
@@ -14,7 +16,7 @@ artemis:
 
 mysql:
   host: localhost
-  port: 3306
+  port: 3308
   database: excel_rec_db
   username: root
   password: root
