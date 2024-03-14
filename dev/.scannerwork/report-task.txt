@@ -1,0 +1,6 @@
+projectKey=NaufalSimpleFileAPI
+serverUrl=http://192.168.181.116:9090
+serverVersion=7.9.6.41879
+dashboardUrl=http://192.168.181.116:9090/dashboard?id=NaufalSimpleFileAPI
+ceTaskId=AY47KzkelrR7NU5wpDMo
+ceTaskUrl=http://192.168.181.116:9090/api/ce/task?id=AY47KzkelrR7NU5wpDMo

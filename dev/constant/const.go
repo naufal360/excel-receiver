@@ -4,7 +4,10 @@ type RequestIDKey struct{}
 type ClientIDKey struct{}
 
 const (
-	ReqIDLog = "REQUEST_ID"
+	ReqIDLog             = "REQUEST_ID"
+	StatusFailed         = "failed"
+	StatusSuccess        = "received"
+	MsgInvalidLengthData = "error invalid row data length"
 )
 
 type ResCode string

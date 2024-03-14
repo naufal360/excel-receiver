@@ -52,8 +52,9 @@ func (a *App) checkConnectivity(ctx *gin.Context) {
 
 func (a *App) uploadFileRequest(ctx *gin.Context) {
 	var (
-		reqID           = ctx.Request.Context().Value(constant.RequestIDKey{}).(string)
-		limitSize int64 = 128 * 1024 // 128kb
+		reqID                      = ctx.Request.Context().Value(constant.RequestIDKey{}).(string)
+		limitSize            int64 = 128 * 1024 // 128kb
+		StatusFailedResponse       = constant.StatusFailed
 	)
 
 	contentType := strings.Split(ctx.GetHeader("Content-Type"), ";")[0]
@@ -65,13 +66,13 @@ func (a *App) uploadFileRequest(ctx *gin.Context) {
 				"ERROR":           "invalid content-type",
 			}, "failed to parse multipart form data request")
 
-		ctx.JSON(ierr.MapResponse(ierr.NewF(constant.InvalidRequest, ""), reqID, "failed"))
+		ctx.JSON(ierr.MapResponse(ierr.NewF(constant.InvalidRequest, ""), reqID, StatusFailedResponse))
 		return
 	}
 
 	form, err := ctx.MultipartForm()
 	if err != nil {
-		ctx.JSON(ierr.MapResponse(ierr.NewF(constant.APIInternalError, ""), reqID, "failed"))
+		ctx.JSON(ierr.MapResponse(ierr.NewF(constant.APIInternalError, ""), reqID, StatusFailedResponse))
 	}
 	file := form.File["file"][0]
 	extensionFile := filepath.Ext(file.Filename)
@@ -84,7 +85,7 @@ func (a *App) uploadFileRequest(ctx *gin.Context) {
 				"ERROR":           err,
 			}, "failed to parse file size more than 128kb")
 
-		ctx.JSON(ierr.MapResponse(ierr.NewF(constant.FileSizeLimit, ""), reqID, "failed"))
+		ctx.JSON(ierr.MapResponse(ierr.NewF(constant.FileSizeLimit, ""), reqID, StatusFailedResponse))
 		return
 	}
 

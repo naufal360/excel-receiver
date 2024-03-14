@@ -24,8 +24,10 @@ func NewRequest(db *sqlx.DB, log provider.ILogger) *RequestRepository {
 
 func (r *RequestRepository) CreateRequest(ctx context.Context, payload *entity.Request) (status string, err error) {
 	var (
-		reqID    = ctx.Value(constant.RequestIDKey{}).(string)
-		queryStr = `
+		StatusFailedResponse  = constant.StatusFailed
+		StatusSuccessResponse = constant.StatusSuccess
+		reqID                 = ctx.Value(constant.RequestIDKey{}).(string)
+		queryStr              = `
 			insert into request (
 				request_id, status, file_path, created_at
 			) values ( 
@@ -45,7 +47,7 @@ func (r *RequestRepository) CreateRequest(ctx context.Context, payload *entity.R
 		r.log.ErrorWithFields(provider.DBLog, map[string]interface{}{
 			constant.ReqIDLog: reqID,
 		}, "failed to insert request: %s", err)
-		return "failed", err
+		return StatusFailedResponse, err
 	}
 
 	res, err := r.db.ExecContext(ctx, query, args...)
@@ -54,7 +56,7 @@ func (r *RequestRepository) CreateRequest(ctx context.Context, payload *entity.R
 			constant.ReqIDLog: reqID,
 		}, "failed to insert request: %s", err)
 
-		return "failed", err
+		return StatusFailedResponse, err
 	}
 
 	_, err = res.LastInsertId()
@@ -63,8 +65,8 @@ func (r *RequestRepository) CreateRequest(ctx context.Context, payload *entity.R
 			constant.ReqIDLog: reqID,
 		}, "failed to get last inserted id request: %s", err)
 
-		return "failed", err
+		return StatusFailedResponse, err
 	}
 
-	return "received", nil
+	return StatusSuccessResponse, nil
 }

@@ -34,15 +34,16 @@ func NewSendRequestService(log provider.ILogger, artemisRepo repository.QueueInt
 
 func (s *sendRequest) SendRequest(ctx *gin.Context, file *multipart.FileHeader, extensionFile string) (status string, err error) {
 	var (
-		uploadDir      = config.Configuration.Server.UploadDir
-		queueList      []entity.Queue
-		requestPayload entity.Request
-		reqID          = ctx.Request.Context().Value(constant.RequestIDKey{}).(string)
+		StatusFailedResponse = constant.StatusFailed
+		uploadDir            = config.Configuration.Server.UploadDir
+		queueList            []entity.Queue
+		requestPayload       entity.Request
+		reqID                = ctx.Request.Context().Value(constant.RequestIDKey{}).(string)
 	)
 
 	openFile, err := file.Open()
 	if err != nil {
-		return "failed", err
+		return StatusFailedResponse, err
 	}
 
 	switch extensionFile {
@@ -51,7 +52,7 @@ func (s *sendRequest) SendRequest(ctx *gin.Context, file *multipart.FileHeader, 
 	case ".csv":
 		queueList, status, err = s.readCSV(openFile, file.Filename, reqID)
 	default:
-		return "failed", ierr.NewF(constant.InvalidRequest, "")
+		return StatusFailedResponse, ierr.NewF(constant.InvalidRequest, "")
 	}
 	if err != nil {
 		return status, err
@@ -64,14 +65,14 @@ func (s *sendRequest) SendRequest(ctx *gin.Context, file *multipart.FileHeader, 
 				"DATA":            queue,
 				"ERROR":           err,
 			}, "error when produce queue")
-			return "failed", err
+			return StatusFailedResponse, err
 		}
 	}
 
 	filepath := fmt.Sprintf("/%s%s", reqID, extensionFile)
 	dst := fmt.Sprintf(".%s%s", uploadDir, filepath)
 	if err := ctx.SaveUploadedFile(file, dst); err != nil {
-		return "failed", err
+		return StatusFailedResponse, err
 	}
 
 	requestPayload = entity.Request{
@@ -87,12 +88,14 @@ func (s *sendRequest) SendRequest(ctx *gin.Context, file *multipart.FileHeader, 
 
 func (s *sendRequest) readXLSX(file multipart.File, filename, reqID string) (queueList []entity.Queue, status string, err error) {
 	var (
-		sheetName = config.Configuration.Server.SheetName
+		sheetName               = config.Configuration.Server.SheetName
+		StatusFailedResponse    = constant.StatusFailed
+		MessageInvalidLengthRow = constant.MsgInvalidLengthData
 	)
 
 	readFile, err := excelize.OpenReader(file)
 	if err != nil {
-		return queueList, "failed", err
+		return queueList, StatusFailedResponse, err
 	}
 
 	rows := readFile.GetRows(sheetName)
@@ -103,8 +106,8 @@ func (s *sendRequest) readXLSX(file multipart.File, filename, reqID string) (que
 		s.log.ErrorWithFields(provider.AppLog, map[string]interface{}{
 			constant.ReqIDLog: reqID,
 			"ERROR":           "invalid row data length",
-		}, "error when produce queue")
-		return queueList, "failed", ierr.NewF(constant.InvalidRowData, "")
+		}, MessageInvalidLengthRow)
+		return queueList, StatusFailedResponse, ierr.NewF(constant.InvalidRowData, "")
 	}
 
 	queueList, status, err = s.checkMandatory(reqID, rows)
@@ -114,8 +117,10 @@ func (s *sendRequest) readXLSX(file multipart.File, filename, reqID string) (que
 
 func (s *sendRequest) readCSV(file multipart.File, filename, reqID string) (queueList []entity.Queue, status string, err error) {
 	var (
-		rows                [][]string
-		dataRows, totalData int
+		rows                    [][]string
+		dataRows, totalData     int
+		StatusFailedResponse    = constant.StatusFailed
+		MessageInvalidLengthRow = constant.MsgInvalidLengthData
 	)
 
 	reader := csv.NewReader(file)
@@ -127,7 +132,7 @@ func (s *sendRequest) readCSV(file multipart.File, filename, reqID string) (queu
 		}
 
 		if err != nil {
-			return queueList, "failed", err
+			return queueList, StatusFailedResponse, err
 		}
 
 		rows = append(rows, record)
@@ -140,8 +145,8 @@ func (s *sendRequest) readCSV(file multipart.File, filename, reqID string) (queu
 		s.log.ErrorWithFields(provider.AppLog, map[string]interface{}{
 			constant.ReqIDLog: reqID,
 			"ERROR":           "invalid row data length",
-		}, "error when produce queue")
-		return queueList, "failed", ierr.NewF(constant.InvalidRowData, "")
+		}, MessageInvalidLengthRow)
+		return queueList, StatusFailedResponse, ierr.NewF(constant.InvalidRowData, "")
 	}
 
 	queueList, status, err = s.checkMandatory(reqID, rows)
@@ -160,61 +165,80 @@ func (s *sendRequest) checkMandatory(reqID string, rows [][]string) (queueList [
 
 	for idx, row := range rows {
 		if idx == 0 {
-			for _, col := range row {
-				if _, ok := mandatoryColumns[col]; ok {
-					mandatoryColumns[col] = true
-				}
-			}
-
-			// Check if all mandatory columns are present
-			for col, present := range mandatoryColumns {
-				if !present {
-					return queueList, "failed", ierr.NewF(constant.EmptyRowMandatory, col)
-				}
+			if err := checkMandatoryColumns(row, mandatoryColumns); err != nil {
+				return nil, constant.StatusFailed, err
 			}
 		} else {
-			var price float64
-			var weight float64
-
-			queue := entity.Queue{
-				RequestID: reqID,
+			queue, err := processRow(reqID, row)
+			if err != nil {
+				return nil, constant.StatusFailed, err
 			}
-
-			for i, col := range row {
-				switch colName := rows[0][i]; colName {
-				case "uniqid":
-					queue.UniqID = col
-				case "description":
-					queue.Description = col
-				case "condition":
-					queue.Condition = col
-				case "price":
-					if col != "" {
-						if price, err = strconv.ParseFloat(col, 64); err != nil {
-							return queueList, "failed", ierr.NewF(constant.InvalidRowData, "")
-						}
-						queue.Price = price
-					}
-				case "color":
-					queue.Color = col
-				case "size":
-					queue.Size = col
-				case "age_group":
-					queue.AgeGroup = col
-				case "material":
-					queue.Material = col
-				case "weight_kg":
-					if col != "" {
-						if weight, err = strconv.ParseFloat(col, 64); err != nil {
-							return queueList, "failed", ierr.NewF(constant.InvalidRowData, "")
-						}
-						queue.WeightKG = weight
-					}
-				}
-			}
-
 			queueList = append(queueList, queue)
 		}
 	}
-	return queueList, status, err
+	return queueList, status, nil
+}
+
+func checkMandatoryColumns(row []string, mandatoryColumns map[string]bool) error {
+	for _, col := range row {
+		if _, ok := mandatoryColumns[col]; ok {
+			mandatoryColumns[col] = true
+		}
+	}
+
+	// Check if all mandatory columns are present
+	for col, present := range mandatoryColumns {
+		if !present {
+			return ierr.NewF(constant.EmptyRowMandatory, col)
+		}
+	}
+	return nil
+}
+
+func processRow(reqID string, row []string) (queue entity.Queue, err error) {
+	queue = entity.Queue{
+		RequestID: reqID,
+	}
+
+	for i, col := range row {
+		colName := row[i]
+
+		switch colName {
+		case "uniqid":
+			queue.UniqID = col
+		case "description":
+			queue.Description = col
+		case "condition":
+			queue.Condition = col
+		case "price":
+			err = parseAndAssignFloat(col, &queue.Price)
+		case "color":
+			queue.Color = col
+		case "size":
+			queue.Size = col
+		case "age_group":
+			queue.AgeGroup = col
+		case "material":
+			queue.Material = col
+		case "weight_kg":
+			err = parseAndAssignFloat(col, &queue.WeightKG)
+		}
+
+		if err != nil {
+			return queue, ierr.NewF(constant.InvalidRowData, "")
+		}
+	}
+
+	return queue, nil
+}
+
+func parseAndAssignFloat(col string, target *float64) error {
+	if col != "" {
+		value, err := strconv.ParseFloat(col, 64)
+		if err != nil {
+			return err
+		}
+		*target = value
+	}
+	return nil
 }

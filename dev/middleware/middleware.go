@@ -19,6 +19,7 @@ func Authorization(logger provider.ILogger, tokenRepo repository.TokenInterface)
 	return func(ctx *gin.Context) {
 		reqID := util.GenerateReqID()
 		ctx.Set("request-id", reqID)
+		ReqIDLog := constant.ReqIDLog
 
 		token := strings.Split(ctx.GetHeader("Authorization"), " ")
 
@@ -32,7 +33,7 @@ func Authorization(logger provider.ILogger, tokenRepo repository.TokenInterface)
 		}
 
 		if len(token) != 2 {
-			logger.WithFields(provider.AppLog, logrus.Fields{"REQUEST_ID": reqID}).Error("middleware : Invalid bearer token")
+			logger.WithFields(provider.AppLog, logrus.Fields{ReqIDLog: reqID}).Error("middleware : Invalid bearer token")
 			ctx.AbortWithStatusJSON(
 				http.StatusUnauthorized,
 				unauthorizedResp,
@@ -41,7 +42,7 @@ func Authorization(logger provider.ILogger, tokenRepo repository.TokenInterface)
 		}
 
 		if strings.ToLower(token[0]) != "bearer" {
-			logger.WithFields(provider.AppLog, logrus.Fields{"REQUEST_ID": reqID}).Error("middleware : Invalid bearer token")
+			logger.WithFields(provider.AppLog, logrus.Fields{ReqIDLog: reqID}).Error("middleware : Invalid bearer token")
 			ctx.AbortWithStatusJSON(
 				http.StatusUnauthorized,
 				unauthorizedResp,
@@ -55,9 +56,9 @@ func Authorization(logger provider.ILogger, tokenRepo repository.TokenInterface)
 		if err != nil {
 			logger.ErrorWithFields(provider.AppLog,
 				map[string]interface{}{
-					"ERROR":      err,
-					"REQUEST_ID": reqID,
-					"TOKEN":      token,
+					"ERROR":  err,
+					ReqIDLog: reqID,
+					"TOKEN":  token,
 				},
 				"middleware: failed get user authentication")
 			ctx.AbortWithStatusJSON(
@@ -78,6 +79,7 @@ func Authorization(logger provider.ILogger, tokenRepo repository.TokenInterface)
 func LoggingMiddleware(logger provider.ILogger) gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		reqID := util.GenerateReqID()
+		ReqIDLog := constant.ReqIDLog
 		nCtx := context.WithValue(ctx.Request.Context(), constant.RequestIDKey{}, reqID)
 		ctx.Request = ctx.Request.WithContext(nCtx)
 
@@ -106,12 +108,12 @@ func LoggingMiddleware(logger provider.ILogger) gin.HandlerFunc {
 		clientIP := ctx.ClientIP()
 
 		logger.InfoWithFields(provider.AppLog, map[string]interface{}{
-			"METHOD":     reqMethod,
-			"URI":        reqUri,
-			"STATUS":     statusCode,
-			"LATENCY":    latencyTime,
-			"CLIENT_IP":  clientIP,
-			"REQUEST_ID": reqID,
+			"METHOD":    reqMethod,
+			"URI":       reqUri,
+			"STATUS":    statusCode,
+			"LATENCY":   latencyTime,
+			"CLIENT_IP": clientIP,
+			ReqIDLog:    reqID,
 		}, "HTTP REQUEST")
 
 		ctx.Next()
