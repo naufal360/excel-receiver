@@ -18,7 +18,7 @@ import (
 func Authorization(logger provider.ILogger, tokenRepo repository.TokenInterface) gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		reqID := util.GenerateReqID()
-		ctx.Set("request-id", reqID)
+		ctx.Set(constant.ReqIDKey, reqID)
 		ReqIDLog := constant.ReqIDLog
 
 		token := strings.Split(ctx.GetHeader("Authorization"), " ")

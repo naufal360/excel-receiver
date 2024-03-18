@@ -1,0 +1,34 @@
+server:
+  mode: debug
+  port: 5000
+  shutdown_timeout: 10s
+  sheet_name: Worksheet
+  upload_dir: /storage/upload
+  endpoint:
+    excel_upload: /excel-upload
+
+artemis:
+  host: localhost
+  port: 61616
+  username: admin
+  password: admin
+  address: request-data
+
+mysql:
+  host: localhost
+  port: 3308
+  database: excel_rec_db
+  username: root
+  password: root
+  options:
+    - parseTime=true
+    - multiStatements=true
+   
+logger:
+  dir: log                                  # DO NOT EDIT!
+  file_name: excel_receiver_api
+  max_backups: 0                            # set 0 for unlimited backups
+  max_size: 10                              # in mb
+  max_age: 90                               # in days, set 0 for unlimited days
+  compress: true
+  local_time: true

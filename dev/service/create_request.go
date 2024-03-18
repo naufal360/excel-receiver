@@ -5,7 +5,7 @@ import (
 	"excel-receiver/config"
 	"excel-receiver/constant"
 	"excel-receiver/entity"
-	"excel-receiver/http/api/ierr"
+	"excel-receiver/ierr"
 	"excel-receiver/provider"
 	"excel-receiver/repository"
 	"fmt"
@@ -155,21 +155,24 @@ func (s *sendRequest) readCSV(file multipart.File, filename, reqID string) (queu
 }
 
 func (s *sendRequest) checkMandatory(reqID string, rows [][]string) (queueList []entity.Queue, status string, err error) {
-	mandatoryColumns := map[string]bool{
-		"uniqid":      false,
-		"title":       false,
-		"description": false,
-		"condition":   false,
-		"price":       false,
-	}
+	var (
+		mandatoryColumns = map[string]bool{
+			"uniqid":      false,
+			"title":       false,
+			"description": false,
+			"condition":   false,
+			"price":       false,
+		}
+	)
 
 	for idx, row := range rows {
 		if idx == 0 {
-			if err := checkMandatoryColumns(row, mandatoryColumns); err != nil {
+			err = s.checkMandatoryColumns(row, mandatoryColumns)
+			if err != nil {
 				return nil, constant.StatusFailed, err
 			}
 		} else {
-			queue, err := processRow(reqID, row)
+			queue, err := s.processRow(reqID, rows[0], row)
 			if err != nil {
 				return nil, constant.StatusFailed, err
 			}
@@ -179,7 +182,7 @@ func (s *sendRequest) checkMandatory(reqID string, rows [][]string) (queueList [
 	return queueList, status, nil
 }
 
-func checkMandatoryColumns(row []string, mandatoryColumns map[string]bool) error {
+func (s *sendRequest) checkMandatoryColumns(row []string, mandatoryColumns map[string]bool) error {
 	for _, col := range row {
 		if _, ok := mandatoryColumns[col]; ok {
 			mandatoryColumns[col] = true
@@ -195,44 +198,47 @@ func checkMandatoryColumns(row []string, mandatoryColumns map[string]bool) error
 	return nil
 }
 
-func processRow(reqID string, row []string) (queue entity.Queue, err error) {
+func (s *sendRequest) processRow(reqID string, titleCol []string, row []string) (queue entity.Queue, err error) {
 	queue = entity.Queue{
 		RequestID: reqID,
 	}
 
-	for i, col := range row {
-		colName := row[i]
-
-		switch colName {
+	var idx int
+	for _, value := range titleCol {
+		switch value {
 		case "uniqid":
-			queue.UniqID = col
+			queue.UniqID = row[idx]
 		case "description":
-			queue.Description = col
+			queue.Description = row[idx]
 		case "condition":
-			queue.Condition = col
+			queue.Condition = row[idx]
 		case "price":
-			err = parseAndAssignFloat(col, &queue.Price)
+			if row[idx] != "" {
+				err = s.parseAndAssignFloat(row[idx], &queue.Price)
+			}
 		case "color":
-			queue.Color = col
+			queue.Color = row[idx]
 		case "size":
-			queue.Size = col
+			queue.Size = row[idx]
 		case "age_group":
-			queue.AgeGroup = col
+			queue.AgeGroup = row[idx]
 		case "material":
-			queue.Material = col
+			queue.Material = row[idx]
 		case "weight_kg":
-			err = parseAndAssignFloat(col, &queue.WeightKG)
+			if row[idx] != "" {
+				err = s.parseAndAssignFloat(row[idx], &queue.WeightKG)
+			}
 		}
-
 		if err != nil {
 			return queue, ierr.NewF(constant.InvalidRowData, "")
 		}
+		idx++
 	}
 
 	return queue, nil
 }
 
-func parseAndAssignFloat(col string, target *float64) error {
+func (s *sendRequest) parseAndAssignFloat(col string, target *float64) error {
 	if col != "" {
 		value, err := strconv.ParseFloat(col, 64)
 		if err != nil {

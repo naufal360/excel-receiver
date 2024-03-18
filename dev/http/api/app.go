@@ -3,7 +3,7 @@ package api
 import (
 	"excel-receiver/config"
 	"excel-receiver/constant"
-	"excel-receiver/http/api/ierr"
+	"excel-receiver/ierr"
 	"excel-receiver/middleware"
 	"excel-receiver/provider"
 	"excel-receiver/repository"
@@ -66,16 +66,15 @@ func (a *App) uploadFileRequest(ctx *gin.Context) {
 				"ERROR":           "invalid content-type",
 			}, "failed to parse multipart form data request")
 
-		ctx.JSON(ierr.MapResponse(ierr.NewF(constant.InvalidRequest, ""), reqID, StatusFailedResponse))
+		ctx.JSON(mapResponse(ierr.NewF(constant.InvalidRequest, ""), reqID, StatusFailedResponse))
 		return
 	}
 
-	form, err := ctx.MultipartForm()
+	file, err := ctx.FormFile("file")
 	if err != nil {
-		ctx.JSON(ierr.MapResponse(ierr.NewF(constant.APIInternalError, ""), reqID, StatusFailedResponse))
+		ctx.JSON(mapResponse(ierr.NewF(constant.APIInternalError, ""), reqID, StatusFailedResponse))
+		return
 	}
-	file := form.File["file"][0]
-	extensionFile := filepath.Ext(file.Filename)
 
 	if file.Size > limitSize {
 		a.log.ErrorWithFields(
@@ -85,14 +84,15 @@ func (a *App) uploadFileRequest(ctx *gin.Context) {
 				"ERROR":           err,
 			}, "failed to parse file size more than 128kb")
 
-		ctx.JSON(ierr.MapResponse(ierr.NewF(constant.FileSizeLimit, ""), reqID, StatusFailedResponse))
+		ctx.JSON(mapResponse(ierr.NewF(constant.FileSizeLimit, ""), reqID, StatusFailedResponse))
 		return
 	}
 
+	extensionFile := filepath.Ext(file.Filename)
 	status, err := a.svc.SendRequest(ctx, file, extensionFile)
 	a.log.InfoWithFields(provider.AppLog, map[string]interface{}{
 		constant.ReqIDLog: reqID,
 		"ERROR":           err,
 	}, "complete processing request")
-	ctx.JSON(ierr.MapResponse(err, reqID, status))
+	ctx.JSON(mapResponse(err, reqID, status))
 }

@@ -6,7 +6,7 @@ import (
 	"errors"
 	"excel-receiver/constant"
 	"excel-receiver/entity"
-	"excel-receiver/http/api/ierr"
+	"excel-receiver/ierr"
 	"excel-receiver/provider"
 
 	"github.com/jmoiron/sqlx"

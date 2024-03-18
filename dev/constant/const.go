@@ -4,6 +4,7 @@ type RequestIDKey struct{}
 type ClientIDKey struct{}
 
 const (
+	ReqIDKey             = "request-id"
 	ReqIDLog             = "REQUEST_ID"
 	StatusFailed         = "failed"
 	StatusSuccess        = "received"
