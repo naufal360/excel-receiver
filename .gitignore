@@ -3,4 +3,5 @@
 /*/storage
 /*/*/log
 /*/log
-/dev/sonar.properties
+/*/testing/storage/upload
+sonar.properties
