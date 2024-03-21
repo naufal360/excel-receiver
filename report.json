@@ -1,0 +1,300 @@
+{"Time":"2024-03-21T12:57:57.588357334+07:00","Action":"output","Package":"excel-receiver","Output":"?   \texcel-receiver\t[no test files]\n"}
+{"Time":"2024-03-21T12:57:57.588573553+07:00","Action":"skip","Package":"excel-receiver","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.804828266+07:00","Action":"run","Package":"excel-receiver/entity","Test":"TestToken_IsExpired"}
+{"Time":"2024-03-21T12:57:57.804970143+07:00","Action":"output","Package":"excel-receiver/entity","Test":"TestToken_IsExpired","Output":"=== RUN   TestToken_IsExpired\n"}
+{"Time":"2024-03-21T12:57:57.805020454+07:00","Action":"run","Package":"excel-receiver/entity","Test":"TestToken_IsExpired/Valid_token"}
+{"Time":"2024-03-21T12:57:57.805039224+07:00","Action":"output","Package":"excel-receiver/entity","Test":"TestToken_IsExpired/Valid_token","Output":"=== RUN   TestToken_IsExpired/Valid_token\n"}
+{"Time":"2024-03-21T12:57:57.805067445+07:00","Action":"run","Package":"excel-receiver/entity","Test":"TestToken_IsExpired/Expired_token"}
+{"Time":"2024-03-21T12:57:57.805081196+07:00","Action":"output","Package":"excel-receiver/entity","Test":"TestToken_IsExpired/Expired_token","Output":"=== RUN   TestToken_IsExpired/Expired_token\n"}
+{"Time":"2024-03-21T12:57:57.805110669+07:00","Action":"output","Package":"excel-receiver/entity","Test":"TestToken_IsExpired","Output":"--- PASS: TestToken_IsExpired (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.805128029+07:00","Action":"output","Package":"excel-receiver/entity","Test":"TestToken_IsExpired/Valid_token","Output":"    --- PASS: TestToken_IsExpired/Valid_token (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.805141018+07:00","Action":"pass","Package":"excel-receiver/entity","Test":"TestToken_IsExpired/Valid_token","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.805161227+07:00","Action":"output","Package":"excel-receiver/entity","Test":"TestToken_IsExpired/Expired_token","Output":"    --- PASS: TestToken_IsExpired/Expired_token (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.805173476+07:00","Action":"pass","Package":"excel-receiver/entity","Test":"TestToken_IsExpired/Expired_token","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.805184079+07:00","Action":"pass","Package":"excel-receiver/entity","Test":"TestToken_IsExpired","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.805197314+07:00","Action":"output","Package":"excel-receiver/entity","Output":"PASS\n"}
+{"Time":"2024-03-21T12:57:57.805348797+07:00","Action":"output","Package":"excel-receiver/entity","Output":"coverage: 100.0% of statements\n"}
+{"Time":"2024-03-21T12:57:57.806877797+07:00","Action":"output","Package":"excel-receiver/entity","Output":"ok  \texcel-receiver/entity\t0.007s\tcoverage: 100.0% of statements\n"}
+{"Time":"2024-03-21T12:57:57.806999228+07:00","Action":"pass","Package":"excel-receiver/entity","Elapsed":0.008}
+{"Time":"2024-03-21T12:57:57.815116711+07:00","Action":"run","Package":"excel-receiver/util","Test":"TestCreateDirectory"}
+{"Time":"2024-03-21T12:57:57.815280609+07:00","Action":"output","Package":"excel-receiver/util","Test":"TestCreateDirectory","Output":"=== RUN   TestCreateDirectory\n"}
+{"Time":"2024-03-21T12:57:57.815331216+07:00","Action":"run","Package":"excel-receiver/util","Test":"TestCreateDirectory/Create_single_directory"}
+{"Time":"2024-03-21T12:57:57.815350564+07:00","Action":"output","Package":"excel-receiver/util","Test":"TestCreateDirectory/Create_single_directory","Output":"=== RUN   TestCreateDirectory/Create_single_directory\n"}
+{"Time":"2024-03-21T12:57:57.815981042+07:00","Action":"run","Package":"excel-receiver/util","Test":"TestCreateDirectory/Create_multiple_directories"}
+{"Time":"2024-03-21T12:57:57.816169205+07:00","Action":"output","Package":"excel-receiver/util","Test":"TestCreateDirectory/Create_multiple_directories","Output":"=== RUN   TestCreateDirectory/Create_multiple_directories\n"}
+{"Time":"2024-03-21T12:57:57.817262657+07:00","Action":"run","Package":"excel-receiver/util","Test":"TestCreateDirectory/Create_existing_directory"}
+{"Time":"2024-03-21T12:57:57.817316191+07:00","Action":"output","Package":"excel-receiver/util","Test":"TestCreateDirectory/Create_existing_directory","Output":"=== RUN   TestCreateDirectory/Create_existing_directory\n"}
+{"Time":"2024-03-21T12:57:57.818051819+07:00","Action":"output","Package":"excel-receiver/util","Test":"TestCreateDirectory","Output":"--- PASS: TestCreateDirectory (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.818193309+07:00","Action":"output","Package":"excel-receiver/util","Test":"TestCreateDirectory/Create_single_directory","Output":"    --- PASS: TestCreateDirectory/Create_single_directory (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.818232966+07:00","Action":"pass","Package":"excel-receiver/util","Test":"TestCreateDirectory/Create_single_directory","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.818254174+07:00","Action":"output","Package":"excel-receiver/util","Test":"TestCreateDirectory/Create_multiple_directories","Output":"    --- PASS: TestCreateDirectory/Create_multiple_directories (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.81826664+07:00","Action":"pass","Package":"excel-receiver/util","Test":"TestCreateDirectory/Create_multiple_directories","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.818277872+07:00","Action":"output","Package":"excel-receiver/util","Test":"TestCreateDirectory/Create_existing_directory","Output":"    --- PASS: TestCreateDirectory/Create_existing_directory (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.81828941+07:00","Action":"pass","Package":"excel-receiver/util","Test":"TestCreateDirectory/Create_existing_directory","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.818299285+07:00","Action":"pass","Package":"excel-receiver/util","Test":"TestCreateDirectory","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.818308697+07:00","Action":"run","Package":"excel-receiver/util","Test":"TestGenerateReqID"}
+{"Time":"2024-03-21T12:57:57.818317978+07:00","Action":"output","Package":"excel-receiver/util","Test":"TestGenerateReqID","Output":"=== RUN   TestGenerateReqID\n"}
+{"Time":"2024-03-21T12:57:57.818328074+07:00","Action":"run","Package":"excel-receiver/util","Test":"TestGenerateReqID/Generate_request_ID_with_default_length_(6)"}
+{"Time":"2024-03-21T12:57:57.818337572+07:00","Action":"output","Package":"excel-receiver/util","Test":"TestGenerateReqID/Generate_request_ID_with_default_length_(6)","Output":"=== RUN   TestGenerateReqID/Generate_request_ID_with_default_length_(6)\n"}
+{"Time":"2024-03-21T12:57:57.818372106+07:00","Action":"output","Package":"excel-receiver/util","Test":"TestGenerateReqID","Output":"--- PASS: TestGenerateReqID (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.818388209+07:00","Action":"output","Package":"excel-receiver/util","Test":"TestGenerateReqID/Generate_request_ID_with_default_length_(6)","Output":"    --- PASS: TestGenerateReqID/Generate_request_ID_with_default_length_(6) (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.818400454+07:00","Action":"pass","Package":"excel-receiver/util","Test":"TestGenerateReqID/Generate_request_ID_with_default_length_(6)","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.818409901+07:00","Action":"pass","Package":"excel-receiver/util","Test":"TestGenerateReqID","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.818419144+07:00","Action":"output","Package":"excel-receiver/util","Output":"PASS\n"}
+{"Time":"2024-03-21T12:57:57.818429341+07:00","Action":"output","Package":"excel-receiver/util","Output":"coverage: 85.7% of statements\n"}
+{"Time":"2024-03-21T12:57:57.819572255+07:00","Action":"output","Package":"excel-receiver/util","Output":"ok  \texcel-receiver/util\t0.010s\tcoverage: 85.7% of statements\n"}
+{"Time":"2024-03-21T12:57:57.819617738+07:00","Action":"pass","Package":"excel-receiver/util","Elapsed":0.01}
+{"Time":"2024-03-21T12:57:57.870209819+07:00","Action":"run","Package":"excel-receiver/config","Test":"TestConfigLoading"}
+{"Time":"2024-03-21T12:57:57.87035708+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading","Output":"=== RUN   TestConfigLoading\n"}
+{"Time":"2024-03-21T12:57:57.870396648+07:00","Action":"run","Package":"excel-receiver/config","Test":"TestConfigLoading/Error_loading_config"}
+{"Time":"2024-03-21T12:57:57.870414006+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Error_loading_config","Output":"=== RUN   TestConfigLoading/Error_loading_config\n"}
+{"Time":"2024-03-21T12:57:57.870459153+07:00","Action":"run","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading"}
+{"Time":"2024-03-21T12:57:57.870471299+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"=== RUN   TestConfigLoading/Successful_config_loading\n"}
+{"Time":"2024-03-21T12:57:57.870970748+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"    config_test.go:73: \n"}
+{"Time":"2024-03-21T12:57:57.871035842+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"        \tError Trace:\t/root/projects/go/final-project/excel-receiver/config/config_test.go:73\n"}
+{"Time":"2024-03-21T12:57:57.871045997+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"        \tError:      \tNot equal: \n"}
+{"Time":"2024-03-21T12:57:57.871050996+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"        \t            \texpected: \"localhost\"\n"}
+{"Time":"2024-03-21T12:57:57.871055818+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"        \t            \tactual  : \"mysql\"\n"}
+{"Time":"2024-03-21T12:57:57.871060886+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"        \t            \t\n"}
+{"Time":"2024-03-21T12:57:57.871065026+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"        \t            \tDiff:\n"}
+{"Time":"2024-03-21T12:57:57.871069272+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"        \t            \t--- Expected\n"}
+{"Time":"2024-03-21T12:57:57.871073689+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"        \t            \t+++ Actual\n"}
+{"Time":"2024-03-21T12:57:57.871077829+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"        \t            \t@@ -1 +1 @@\n"}
+{"Time":"2024-03-21T12:57:57.871081835+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"        \t            \t-localhost\n"}
+{"Time":"2024-03-21T12:57:57.871085841+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"        \t            \t+mysql\n"}
+{"Time":"2024-03-21T12:57:57.871089895+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"        \tTest:       \tTestConfigLoading/Successful_config_loading\n"}
+{"Time":"2024-03-21T12:57:57.871100203+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading","Output":"--- FAIL: TestConfigLoading (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.871106049+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Error_loading_config","Output":"    --- PASS: TestConfigLoading/Error_loading_config (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.87111105+07:00","Action":"pass","Package":"excel-receiver/config","Test":"TestConfigLoading/Error_loading_config","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.871118753+07:00","Action":"output","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Output":"    --- FAIL: TestConfigLoading/Successful_config_loading (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.871123086+07:00","Action":"fail","Package":"excel-receiver/config","Test":"TestConfigLoading/Successful_config_loading","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.871138542+07:00","Action":"fail","Package":"excel-receiver/config","Test":"TestConfigLoading","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.871142978+07:00","Action":"output","Package":"excel-receiver/config","Output":"FAIL\n"}
+{"Time":"2024-03-21T12:57:57.871154873+07:00","Action":"output","Package":"excel-receiver/config","Output":"coverage: 100.0% of statements\n"}
+{"Time":"2024-03-21T12:57:57.871894658+07:00","Action":"output","Package":"excel-receiver/config","Output":"FAIL\texcel-receiver/config\t0.005s\n"}
+{"Time":"2024-03-21T12:57:57.871916326+07:00","Action":"fail","Package":"excel-receiver/config","Elapsed":0.005}
+{"Time":"2024-03-21T12:57:57.872980354+07:00","Action":"output","Package":"excel-receiver/constant","Output":"?   \texcel-receiver/constant\t[no test files]\n"}
+{"Time":"2024-03-21T12:57:57.873015015+07:00","Action":"skip","Package":"excel-receiver/constant","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.873049426+07:00","Action":"output","Package":"excel-receiver/dto/response","Output":"?   \texcel-receiver/dto/response\t[no test files]\n"}
+{"Time":"2024-03-21T12:57:57.873058613+07:00","Action":"skip","Package":"excel-receiver/dto/response","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.990731909+07:00","Action":"run","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware"}
+{"Time":"2024-03-21T12:57:57.990918064+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware","Output":"=== RUN   TestAuthorizationMiddleware\n"}
+{"Time":"2024-03-21T12:57:57.990997952+07:00","Action":"run","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Valid_Token"}
+{"Time":"2024-03-21T12:57:57.991018582+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Valid_Token","Output":"=== RUN   TestAuthorizationMiddleware/Valid_Token\n"}
+{"Time":"2024-03-21T12:57:57.991042556+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Valid_Token","Output":"[GIN-debug] [WARNING] Running in \"debug\" mode. Switch to \"release\" mode in production.\n"}
+{"Time":"2024-03-21T12:57:57.991057516+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Valid_Token","Output":" - using env:\texport GIN_MODE=release\n"}
+{"Time":"2024-03-21T12:57:57.991069603+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Valid_Token","Output":" - using code:\tgin.SetMode(gin.ReleaseMode)\n"}
+{"Time":"2024-03-21T12:57:57.991079834+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Valid_Token","Output":"\n"}
+{"Time":"2024-03-21T12:57:57.991091171+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Valid_Token","Output":"[GIN-debug] GET    /test                     --\u003e excel-receiver/middleware.TestAuthorizationMiddleware.func9.1 (2 handlers)\n"}
+{"Time":"2024-03-21T12:57:57.996954087+07:00","Action":"run","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/No_token"}
+{"Time":"2024-03-21T12:57:57.997079937+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/No_token","Output":"=== RUN   TestAuthorizationMiddleware/No_token\n"}
+{"Time":"2024-03-21T12:57:57.99709937+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/No_token","Output":"[GIN-debug] [WARNING] Running in \"debug\" mode. Switch to \"release\" mode in production.\n"}
+{"Time":"2024-03-21T12:57:57.997108693+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/No_token","Output":" - using env:\texport GIN_MODE=release\n"}
+{"Time":"2024-03-21T12:57:57.997116476+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/No_token","Output":" - using code:\tgin.SetMode(gin.ReleaseMode)\n"}
+{"Time":"2024-03-21T12:57:57.997139425+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/No_token","Output":"\n"}
+{"Time":"2024-03-21T12:57:57.997158628+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/No_token","Output":"[GIN-debug] GET    /test                     --\u003e excel-receiver/middleware.TestAuthorizationMiddleware.func9.1 (2 handlers)\n"}
+{"Time":"2024-03-21T12:57:57.997291888+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/No_token","Output":"time=\"2024-03-21T12:57:57+07:00\" level=error msg=\"middleware : Invalid bearer token\"\n"}
+{"Time":"2024-03-21T12:57:57.997374895+07:00","Action":"run","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Not_bearer"}
+{"Time":"2024-03-21T12:57:57.997385143+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Not_bearer","Output":"=== RUN   TestAuthorizationMiddleware/Not_bearer\n"}
+{"Time":"2024-03-21T12:57:57.997609629+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Not_bearer","Output":"[GIN-debug] [WARNING] Running in \"debug\" mode. Switch to \"release\" mode in production.\n"}
+{"Time":"2024-03-21T12:57:57.99773237+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Not_bearer","Output":" - using env:\texport GIN_MODE=release\n"}
+{"Time":"2024-03-21T12:57:57.997771515+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Not_bearer","Output":" - using code:\tgin.SetMode(gin.ReleaseMode)\n"}
+{"Time":"2024-03-21T12:57:57.997792541+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Not_bearer","Output":"\n"}
+{"Time":"2024-03-21T12:57:57.99780611+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Not_bearer","Output":"[GIN-debug] GET    /test                     --\u003e excel-receiver/middleware.TestAuthorizationMiddleware.func9.1 (2 handlers)\n"}
+{"Time":"2024-03-21T12:57:57.997818615+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Not_bearer","Output":"time=\"2024-03-21T12:57:57+07:00\" level=error msg=\"middleware : Invalid bearer token\"\n"}
+{"Time":"2024-03-21T12:57:57.997840528+07:00","Action":"run","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Invalid_bearer_token"}
+{"Time":"2024-03-21T12:57:57.997853731+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Invalid_bearer_token","Output":"=== RUN   TestAuthorizationMiddleware/Invalid_bearer_token\n"}
+{"Time":"2024-03-21T12:57:57.997865281+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Invalid_bearer_token","Output":"[GIN-debug] [WARNING] Running in \"debug\" mode. Switch to \"release\" mode in production.\n"}
+{"Time":"2024-03-21T12:57:57.997877281+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Invalid_bearer_token","Output":" - using env:\texport GIN_MODE=release\n"}
+{"Time":"2024-03-21T12:57:57.997887551+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Invalid_bearer_token","Output":" - using code:\tgin.SetMode(gin.ReleaseMode)\n"}
+{"Time":"2024-03-21T12:57:57.997897187+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Invalid_bearer_token","Output":"\n"}
+{"Time":"2024-03-21T12:57:57.997906904+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Invalid_bearer_token","Output":"[GIN-debug] GET    /test                     --\u003e excel-receiver/middleware.TestAuthorizationMiddleware.func9.1 (2 handlers)\n"}
+{"Time":"2024-03-21T12:57:57.997937951+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware","Output":"--- PASS: TestAuthorizationMiddleware (0.01s)\n"}
+{"Time":"2024-03-21T12:57:57.997969279+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Valid_Token","Output":"    --- PASS: TestAuthorizationMiddleware/Valid_Token (0.01s)\n"}
+{"Time":"2024-03-21T12:57:57.997982665+07:00","Action":"pass","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Valid_Token","Elapsed":0.01}
+{"Time":"2024-03-21T12:57:57.998037211+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/No_token","Output":"    --- PASS: TestAuthorizationMiddleware/No_token (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.998057004+07:00","Action":"pass","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/No_token","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.998069962+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Not_bearer","Output":"    --- PASS: TestAuthorizationMiddleware/Not_bearer (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.998083529+07:00","Action":"pass","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Not_bearer","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.998095364+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Invalid_bearer_token","Output":"    --- PASS: TestAuthorizationMiddleware/Invalid_bearer_token (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.998116738+07:00","Action":"pass","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware/Invalid_bearer_token","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.998127488+07:00","Action":"pass","Package":"excel-receiver/middleware","Test":"TestAuthorizationMiddleware","Elapsed":0.01}
+{"Time":"2024-03-21T12:57:57.998137736+07:00","Action":"run","Package":"excel-receiver/middleware","Test":"TestLoggingMiddleware"}
+{"Time":"2024-03-21T12:57:57.998148696+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestLoggingMiddleware","Output":"=== RUN   TestLoggingMiddleware\n"}
+{"Time":"2024-03-21T12:57:57.998161273+07:00","Action":"run","Package":"excel-receiver/middleware","Test":"TestLoggingMiddleware/Logging_Middleware"}
+{"Time":"2024-03-21T12:57:57.998171821+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestLoggingMiddleware/Logging_Middleware","Output":"=== RUN   TestLoggingMiddleware/Logging_Middleware\n"}
+{"Time":"2024-03-21T12:57:57.998182064+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestLoggingMiddleware/Logging_Middleware","Output":"[GIN-debug] [WARNING] Running in \"debug\" mode. Switch to \"release\" mode in production.\n"}
+{"Time":"2024-03-21T12:57:57.99819315+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestLoggingMiddleware/Logging_Middleware","Output":" - using env:\texport GIN_MODE=release\n"}
+{"Time":"2024-03-21T12:57:57.998203861+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestLoggingMiddleware/Logging_Middleware","Output":" - using code:\tgin.SetMode(gin.ReleaseMode)\n"}
+{"Time":"2024-03-21T12:57:57.998215071+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestLoggingMiddleware/Logging_Middleware","Output":"\n"}
+{"Time":"2024-03-21T12:57:57.998230951+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestLoggingMiddleware","Output":"--- PASS: TestLoggingMiddleware (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.99824602+07:00","Action":"output","Package":"excel-receiver/middleware","Test":"TestLoggingMiddleware/Logging_Middleware","Output":"    --- PASS: TestLoggingMiddleware/Logging_Middleware (0.00s)\n"}
+{"Time":"2024-03-21T12:57:57.998257735+07:00","Action":"pass","Package":"excel-receiver/middleware","Test":"TestLoggingMiddleware/Logging_Middleware","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.998268539+07:00","Action":"pass","Package":"excel-receiver/middleware","Test":"TestLoggingMiddleware","Elapsed":0}
+{"Time":"2024-03-21T12:57:57.998278908+07:00","Action":"output","Package":"excel-receiver/middleware","Output":"PASS\n"}
+{"Time":"2024-03-21T12:57:57.998303361+07:00","Action":"output","Package":"excel-receiver/middleware","Output":"coverage: 100.0% of statements\n"}
+{"Time":"2024-03-21T12:57:57.999398282+07:00","Action":"output","Package":"excel-receiver/middleware","Output":"ok  \texcel-receiver/middleware\t0.026s\tcoverage: 100.0% of statements\n"}
+{"Time":"2024-03-21T12:57:57.999457865+07:00","Action":"pass","Package":"excel-receiver/middleware","Elapsed":0.026}
+{"Time":"2024-03-21T12:57:58.091978441+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest"}
+{"Time":"2024-03-21T12:57:58.092090349+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest","Output":"=== RUN   TestSendRequest\n"}
+{"Time":"2024-03-21T12:57:58.093402073+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest/success_XLSX_request"}
+{"Time":"2024-03-21T12:57:58.093492827+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest/success_XLSX_request","Output":"=== RUN   TestSendRequest/success_XLSX_request\n"}
+{"Time":"2024-03-21T12:57:58.1060258+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest/success_CSV_request"}
+{"Time":"2024-03-21T12:57:58.106192844+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest/success_CSV_request","Output":"=== RUN   TestSendRequest/success_CSV_request\n"}
+{"Time":"2024-03-21T12:57:58.106640038+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest/failed_invalid_extension_request"}
+{"Time":"2024-03-21T12:57:58.106716938+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest/failed_invalid_extension_request","Output":"=== RUN   TestSendRequest/failed_invalid_extension_request\n"}
+{"Time":"2024-03-21T12:57:58.106773792+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest/failed_csv_invalid_data_rows"}
+{"Time":"2024-03-21T12:57:58.106782808+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest/failed_csv_invalid_data_rows","Output":"=== RUN   TestSendRequest/failed_csv_invalid_data_rows\n"}
+{"Time":"2024-03-21T12:57:58.107595331+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest/failed_xlsx_invalid_data_rows"}
+{"Time":"2024-03-21T12:57:58.10766478+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest/failed_xlsx_invalid_data_rows","Output":"=== RUN   TestSendRequest/failed_xlsx_invalid_data_rows\n"}
+{"Time":"2024-03-21T12:57:58.118236161+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest/failed_csv_empty_row_mandatory"}
+{"Time":"2024-03-21T12:57:58.11834841+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest/failed_csv_empty_row_mandatory","Output":"=== RUN   TestSendRequest/failed_csv_empty_row_mandatory\n"}
+{"Time":"2024-03-21T12:57:58.120284306+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest","Output":"--- PASS: TestSendRequest (0.03s)\n"}
+{"Time":"2024-03-21T12:57:58.120435681+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest/success_XLSX_request","Output":"    --- PASS: TestSendRequest/success_XLSX_request (0.01s)\n"}
+{"Time":"2024-03-21T12:57:58.120470011+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest/success_XLSX_request","Elapsed":0.01}
+{"Time":"2024-03-21T12:57:58.120491899+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest/success_CSV_request","Output":"    --- PASS: TestSendRequest/success_CSV_request (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.120505154+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest/success_CSV_request","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.120526747+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest/failed_invalid_extension_request","Output":"    --- PASS: TestSendRequest/failed_invalid_extension_request (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.120556571+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest/failed_invalid_extension_request","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.120573125+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest/failed_csv_invalid_data_rows","Output":"    --- PASS: TestSendRequest/failed_csv_invalid_data_rows (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.120592153+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest/failed_csv_invalid_data_rows","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.120602177+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest/failed_xlsx_invalid_data_rows","Output":"    --- PASS: TestSendRequest/failed_xlsx_invalid_data_rows (0.01s)\n"}
+{"Time":"2024-03-21T12:57:58.120612632+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest/failed_xlsx_invalid_data_rows","Elapsed":0.01}
+{"Time":"2024-03-21T12:57:58.120622653+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest/failed_csv_empty_row_mandatory","Output":"    --- PASS: TestSendRequest/failed_csv_empty_row_mandatory (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.120633131+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest/failed_csv_empty_row_mandatory","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.120642037+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest","Elapsed":0.03}
+{"Time":"2024-03-21T12:57:58.120652116+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest_checkMandatory"}
+{"Time":"2024-03-21T12:57:58.120660966+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_checkMandatory","Output":"=== RUN   TestSendRequest_checkMandatory\n"}
+{"Time":"2024-03-21T12:57:58.120997808+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest_checkMandatory/invalid_row_data"}
+{"Time":"2024-03-21T12:57:58.121077557+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_checkMandatory/invalid_row_data","Output":"=== RUN   TestSendRequest_checkMandatory/invalid_row_data\n"}
+{"Time":"2024-03-21T12:57:58.121101956+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_checkMandatory","Output":"--- PASS: TestSendRequest_checkMandatory (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.121111077+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_checkMandatory/invalid_row_data","Output":"    --- PASS: TestSendRequest_checkMandatory/invalid_row_data (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.121118246+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest_checkMandatory/invalid_row_data","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.121137064+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest_checkMandatory","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.121143463+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest_processRow"}
+{"Time":"2024-03-21T12:57:58.121149603+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_processRow","Output":"=== RUN   TestSendRequest_processRow\n"}
+{"Time":"2024-03-21T12:57:58.121160578+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest_processRow/failed_price_parse_float"}
+{"Time":"2024-03-21T12:57:58.121166644+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_processRow/failed_price_parse_float","Output":"=== RUN   TestSendRequest_processRow/failed_price_parse_float\n"}
+{"Time":"2024-03-21T12:57:58.121178263+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest_processRow/failed_weight_parse_float"}
+{"Time":"2024-03-21T12:57:58.12118393+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_processRow/failed_weight_parse_float","Output":"=== RUN   TestSendRequest_processRow/failed_weight_parse_float\n"}
+{"Time":"2024-03-21T12:57:58.12144217+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_processRow","Output":"--- PASS: TestSendRequest_processRow (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.121583799+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_processRow/failed_price_parse_float","Output":"    --- PASS: TestSendRequest_processRow/failed_price_parse_float (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.121627212+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest_processRow/failed_price_parse_float","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.121645485+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_processRow/failed_weight_parse_float","Output":"    --- PASS: TestSendRequest_processRow/failed_weight_parse_float (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.121657456+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest_processRow/failed_weight_parse_float","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.121675931+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest_processRow","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.121689205+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest_parseAndAssignFloat"}
+{"Time":"2024-03-21T12:57:58.121698811+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_parseAndAssignFloat","Output":"=== RUN   TestSendRequest_parseAndAssignFloat\n"}
+{"Time":"2024-03-21T12:57:58.121721642+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest_parseAndAssignFloat/success_parse_float"}
+{"Time":"2024-03-21T12:57:58.121731633+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_parseAndAssignFloat/success_parse_float","Output":"=== RUN   TestSendRequest_parseAndAssignFloat/success_parse_float\n"}
+{"Time":"2024-03-21T12:57:58.121741961+07:00","Action":"run","Package":"excel-receiver/service","Test":"TestSendRequest_parseAndAssignFloat/failed_parse_float"}
+{"Time":"2024-03-21T12:57:58.121760026+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_parseAndAssignFloat/failed_parse_float","Output":"=== RUN   TestSendRequest_parseAndAssignFloat/failed_parse_float\n"}
+{"Time":"2024-03-21T12:57:58.121778137+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_parseAndAssignFloat","Output":"--- PASS: TestSendRequest_parseAndAssignFloat (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.121804211+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_parseAndAssignFloat/success_parse_float","Output":"    --- PASS: TestSendRequest_parseAndAssignFloat/success_parse_float (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.121815557+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest_parseAndAssignFloat/success_parse_float","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.121824714+07:00","Action":"output","Package":"excel-receiver/service","Test":"TestSendRequest_parseAndAssignFloat/failed_parse_float","Output":"    --- PASS: TestSendRequest_parseAndAssignFloat/failed_parse_float (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.121834435+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest_parseAndAssignFloat/failed_parse_float","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.121842632+07:00","Action":"pass","Package":"excel-receiver/service","Test":"TestSendRequest_parseAndAssignFloat","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.121851148+07:00","Action":"output","Package":"excel-receiver/service","Output":"PASS\n"}
+{"Time":"2024-03-21T12:57:58.121864189+07:00","Action":"output","Package":"excel-receiver/service","Output":"coverage: 93.5% of statements\n"}
+{"Time":"2024-03-21T12:57:58.124129607+07:00","Action":"output","Package":"excel-receiver/service","Output":"ok  \texcel-receiver/service\t0.050s\tcoverage: 93.5% of statements\n"}
+{"Time":"2024-03-21T12:57:58.124284901+07:00","Action":"pass","Package":"excel-receiver/service","Elapsed":0.051}
+{"Time":"2024-03-21T12:57:58.127563969+07:00","Action":"run","Package":"excel-receiver/http/api","Test":"TestAppCreateServer"}
+{"Time":"2024-03-21T12:57:58.127667498+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppCreateServer","Output":"=== RUN   TestAppCreateServer\n"}
+{"Time":"2024-03-21T12:57:58.127698143+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppCreateServer","Output":"--- PASS: TestAppCreateServer (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.127927804+07:00","Action":"pass","Package":"excel-receiver/http/api","Test":"TestAppCreateServer","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.128081266+07:00","Action":"run","Package":"excel-receiver/http/api","Test":"TestAppCheckConnectivity"}
+{"Time":"2024-03-21T12:57:58.128099916+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppCheckConnectivity","Output":"=== RUN   TestAppCheckConnectivity\n"}
+{"Time":"2024-03-21T12:57:58.128697736+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppCheckConnectivity","Output":"[GIN] 2024/03/21 - 12:57:58 | 200 |     140.901µs |                 | GET      \"/ping\"\n"}
+{"Time":"2024-03-21T12:57:58.128826179+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppCheckConnectivity","Output":"--- PASS: TestAppCheckConnectivity (0.00s)\n"}
+{"Time":"2024-03-21T12:57:58.1288437+07:00","Action":"pass","Package":"excel-receiver/http/api","Test":"TestAppCheckConnectivity","Elapsed":0}
+{"Time":"2024-03-21T12:57:58.128853517+07:00","Action":"run","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest"}
+{"Time":"2024-03-21T12:57:58.128859979+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest","Output":"=== RUN   TestAppUploadFileRequest\n"}
+{"Time":"2024-03-21T12:57:58.129589785+07:00","Action":"run","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/valid_request"}
+{"Time":"2024-03-21T12:57:58.129655453+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/valid_request","Output":"=== RUN   TestAppUploadFileRequest/valid_request\n"}
+{"Time":"2024-03-21T12:57:58.141657197+07:00","Action":"run","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/internal_server_error"}
+{"Time":"2024-03-21T12:57:58.141779261+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/internal_server_error","Output":"=== RUN   TestAppUploadFileRequest/internal_server_error\n"}
+{"Time":"2024-03-21T12:57:58.151859382+07:00","Action":"run","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/invalid_request"}
+{"Time":"2024-03-21T12:57:58.152024101+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/invalid_request","Output":"=== RUN   TestAppUploadFileRequest/invalid_request\n"}
+{"Time":"2024-03-21T12:57:58.156602367+07:00","Action":"run","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/file_size_more_than_128kb"}
+{"Time":"2024-03-21T12:57:58.156727162+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/file_size_more_than_128kb","Output":"=== RUN   TestAppUploadFileRequest/file_size_more_than_128kb\n"}
+{"Time":"2024-03-21T12:57:58.569283621+07:00","Action":"run","Package":"excel-receiver/testing","Test":"TestServiceSuite"}
+{"Time":"2024-03-21T12:57:58.569398669+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"=== RUN   TestServiceSuite\n"}
+{"Time":"2024-03-21T12:57:58.630756087+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:57:58 github.com/testcontainers/testcontainers-go - Connected to docker: \n"}
+{"Time":"2024-03-21T12:57:58.63125215+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"  Server Version: 25.0.3\n"}
+{"Time":"2024-03-21T12:57:58.631351191+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"  API Version: 1.43\n"}
+{"Time":"2024-03-21T12:57:58.63136278+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"  Operating System: Docker Desktop\n"}
+{"Time":"2024-03-21T12:57:58.631368954+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"  Total Memory: 7792 MB\n"}
+{"Time":"2024-03-21T12:57:58.631375041+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"  Resolved Docker Host: unix:///var/run/docker.sock\n"}
+{"Time":"2024-03-21T12:57:58.631381911+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"  Resolved Docker Socket Path: /var/run/docker.sock\n"}
+{"Time":"2024-03-21T12:57:58.631387375+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"  Test SessionID: 03d0070d21d091af20cdbddf653f49e66c225cad0109479193511eb5dc8e1487\n"}
+{"Time":"2024-03-21T12:57:58.631393775+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"  Test ProcessID: b2aa6fda-6a5e-424d-9dd5-80e9b4c455a8\n"}
+{"Time":"2024-03-21T12:57:58.681160706+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:57:58 🐳 Creating container for image docker.io/testcontainers/ryuk:0.5.1\n"}
+{"Time":"2024-03-21T12:57:58.78267155+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:57:58 ✅ Container created: 24660c7fbf98\n"}
+{"Time":"2024-03-21T12:57:58.782759554+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:57:58 🐳 Starting container: 24660c7fbf98\n"}
+{"Time":"2024-03-21T12:57:59.247247336+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:57:59 ✅ Container started: 24660c7fbf98\n"}
+{"Time":"2024-03-21T12:57:59.24739847+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:57:59 🚧 Waiting for container id 24660c7fbf98 image: docker.io/testcontainers/ryuk:0.5.1. Waiting for: \u0026{Port:8080/tcp timeout:\u003cnil\u003e PollInterval:100ms}\n"}
+{"Time":"2024-03-21T12:57:59.59311134+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:57:59 🐳 Creating container for image docker.io/apache/activemq-artemis:2.30.0-alpine\n"}
+{"Time":"2024-03-21T12:57:59.701780122+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:57:59 ✅ Container created: 007783708cd3\n"}
+{"Time":"2024-03-21T12:57:59.701881459+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:57:59 🐳 Starting container: 007783708cd3\n"}
+{"Time":"2024-03-21T12:58:00.174422584+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:58:00 ✅ Container started: 007783708cd3\n"}
+{"Time":"2024-03-21T12:58:00.174529476+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:58:00 🚧 Waiting for container id 007783708cd3 image: docker.io/apache/activemq-artemis:2.30.0-alpine. Waiting for: \u0026{timeout:\u003cnil\u003e deadline:\u003cnil\u003e Strategies:[0xc000582510 0xc000582540]}\n"}
+{"Time":"2024-03-21T12:58:01.970507344+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest","Output":"--- PASS: TestAppUploadFileRequest (3.84s)\n"}
+{"Time":"2024-03-21T12:58:01.970630481+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/valid_request","Output":"    --- PASS: TestAppUploadFileRequest/valid_request (0.01s)\n"}
+{"Time":"2024-03-21T12:58:01.970662995+07:00","Action":"pass","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/valid_request","Elapsed":0.01}
+{"Time":"2024-03-21T12:58:01.970697604+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/internal_server_error","Output":"    --- PASS: TestAppUploadFileRequest/internal_server_error (0.01s)\n"}
+{"Time":"2024-03-21T12:58:01.970710719+07:00","Action":"pass","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/internal_server_error","Elapsed":0.01}
+{"Time":"2024-03-21T12:58:01.970720986+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/invalid_request","Output":"    --- PASS: TestAppUploadFileRequest/invalid_request (0.00s)\n"}
+{"Time":"2024-03-21T12:58:01.970732297+07:00","Action":"pass","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/invalid_request","Elapsed":0}
+{"Time":"2024-03-21T12:58:01.970742321+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/file_size_more_than_128kb","Output":"    --- PASS: TestAppUploadFileRequest/file_size_more_than_128kb (3.81s)\n"}
+{"Time":"2024-03-21T12:58:01.970753092+07:00","Action":"pass","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest/file_size_more_than_128kb","Elapsed":3.81}
+{"Time":"2024-03-21T12:58:01.970763167+07:00","Action":"pass","Package":"excel-receiver/http/api","Test":"TestAppUploadFileRequest","Elapsed":3.84}
+{"Time":"2024-03-21T12:58:01.970771635+07:00","Action":"run","Package":"excel-receiver/http/api","Test":"TestMapResponse"}
+{"Time":"2024-03-21T12:58:01.970779957+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestMapResponse","Output":"=== RUN   TestMapResponse\n"}
+{"Time":"2024-03-21T12:58:01.970796729+07:00","Action":"run","Package":"excel-receiver/http/api","Test":"TestMapResponse/No_error"}
+{"Time":"2024-03-21T12:58:01.970809532+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestMapResponse/No_error","Output":"=== RUN   TestMapResponse/No_error\n"}
+{"Time":"2024-03-21T12:58:01.970819226+07:00","Action":"run","Package":"excel-receiver/http/api","Test":"TestMapResponse/Error_is_ierr.Error"}
+{"Time":"2024-03-21T12:58:01.970827719+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestMapResponse/Error_is_ierr.Error","Output":"=== RUN   TestMapResponse/Error_is_ierr.Error\n"}
+{"Time":"2024-03-21T12:58:01.970840385+07:00","Action":"run","Package":"excel-receiver/http/api","Test":"TestMapResponse/Error_is_generic_error"}
+{"Time":"2024-03-21T12:58:01.970849436+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestMapResponse/Error_is_generic_error","Output":"=== RUN   TestMapResponse/Error_is_generic_error\n"}
+{"Time":"2024-03-21T12:58:01.971107263+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestMapResponse","Output":"--- PASS: TestMapResponse (0.00s)\n"}
+{"Time":"2024-03-21T12:58:01.97122212+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestMapResponse/No_error","Output":"    --- PASS: TestMapResponse/No_error (0.00s)\n"}
+{"Time":"2024-03-21T12:58:01.971254866+07:00","Action":"pass","Package":"excel-receiver/http/api","Test":"TestMapResponse/No_error","Elapsed":0}
+{"Time":"2024-03-21T12:58:01.971282263+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestMapResponse/Error_is_ierr.Error","Output":"    --- PASS: TestMapResponse/Error_is_ierr.Error (0.00s)\n"}
+{"Time":"2024-03-21T12:58:01.971296532+07:00","Action":"pass","Package":"excel-receiver/http/api","Test":"TestMapResponse/Error_is_ierr.Error","Elapsed":0}
+{"Time":"2024-03-21T12:58:01.971307575+07:00","Action":"output","Package":"excel-receiver/http/api","Test":"TestMapResponse/Error_is_generic_error","Output":"    --- PASS: TestMapResponse/Error_is_generic_error (0.00s)\n"}
+{"Time":"2024-03-21T12:58:01.971317074+07:00","Action":"pass","Package":"excel-receiver/http/api","Test":"TestMapResponse/Error_is_generic_error","Elapsed":0}
+{"Time":"2024-03-21T12:58:01.971326367+07:00","Action":"pass","Package":"excel-receiver/http/api","Test":"TestMapResponse","Elapsed":0}
+{"Time":"2024-03-21T12:58:01.971350224+07:00","Action":"output","Package":"excel-receiver/http/api","Output":"PASS\n"}
+{"Time":"2024-03-21T12:58:01.971361667+07:00","Action":"output","Package":"excel-receiver/http/api","Output":"coverage: 100.0% of statements\n"}
+{"Time":"2024-03-21T12:58:01.974519947+07:00","Action":"output","Package":"excel-receiver/http/api","Output":"ok  \texcel-receiver/http/api\t3.877s\tcoverage: 100.0% of statements\n"}
+{"Time":"2024-03-21T12:58:01.974579066+07:00","Action":"pass","Package":"excel-receiver/http/api","Elapsed":3.878}
+{"Time":"2024-03-21T12:58:01.976701593+07:00","Action":"output","Package":"excel-receiver/ierr","Output":"?   \texcel-receiver/ierr\t[no test files]\n"}
+{"Time":"2024-03-21T12:58:01.980812394+07:00","Action":"skip","Package":"excel-receiver/ierr","Elapsed":0.004}
+{"Time":"2024-03-21T12:58:01.980901268+07:00","Action":"output","Package":"excel-receiver/mocks","Output":"?   \texcel-receiver/mocks\t[no test files]\n"}
+{"Time":"2024-03-21T12:58:01.980963036+07:00","Action":"skip","Package":"excel-receiver/mocks","Elapsed":0}
+{"Time":"2024-03-21T12:58:01.981008647+07:00","Action":"output","Package":"excel-receiver/provider","Output":"?   \texcel-receiver/provider\t[no test files]\n"}
+{"Time":"2024-03-21T12:58:01.981031249+07:00","Action":"skip","Package":"excel-receiver/provider","Elapsed":0}
+{"Time":"2024-03-21T12:58:01.981047438+07:00","Action":"output","Package":"excel-receiver/provider/dailylogger","Output":"?   \texcel-receiver/provider/dailylogger\t[no test files]\n"}
+{"Time":"2024-03-21T12:58:01.981067451+07:00","Action":"skip","Package":"excel-receiver/provider/dailylogger","Elapsed":0}
+{"Time":"2024-03-21T12:58:01.981079188+07:00","Action":"output","Package":"excel-receiver/repository","Output":"?   \texcel-receiver/repository\t[no test files]\n"}
+{"Time":"2024-03-21T12:58:01.981097916+07:00","Action":"skip","Package":"excel-receiver/repository","Elapsed":0}
+{"Time":"2024-03-21T12:58:11.747766974+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"ADDRESS: request-data\n"}
+{"Time":"2024-03-21T12:58:11.805162281+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:58:11 🐳 Creating container for image mysql:8.0\n"}
+{"Time":"2024-03-21T12:58:11.974365677+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:58:11 ✅ Container created: 6be8117e28f2\n"}
+{"Time":"2024-03-21T12:58:11.974545658+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:58:11 🐳 Starting container: 6be8117e28f2\n"}
+{"Time":"2024-03-21T12:58:12.444635405+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:58:12 ✅ Container started: 6be8117e28f2\n"}
+{"Time":"2024-03-21T12:58:12.444994072+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"2024/03/21 12:58:12 🚧 Waiting for container id 6be8117e28f2 image: mysql:8.0. Waiting for: \u0026{timeout:\u003cnil\u003e Log:mysqld: ready for connections. IsRegexp:false Occurrence:1 PollInterval:100ms}\n"}
+{"Time":"2024-03-21T12:58:25.191519284+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"    setup_test.go:160: MySQL container logs: \u0026{%!s(*io.pipe=\u0026{{0 0} 0xc0005c87e0 0xc0005c8840 {0 {0 0}} 0xc0005c88a0 {{0 0} \u003cnil\u003e} {{0 0} \u003cnil\u003e}})}\n"}
+{"Time":"2024-03-21T12:58:30.225500563+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"[mysql] 2024/03/21 12:58:30 packets.go:37: unexpected EOF\n"}
+{"Time":"2024-03-21T12:58:30.230630588+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"[mysql] 2024/03/21 12:58:30 packets.go:37: unexpected EOF\n"}
+{"Time":"2024-03-21T12:58:30.23192987+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"[mysql] 2024/03/21 12:58:30 packets.go:37: unexpected EOF\n"}
+{"Time":"2024-03-21T12:58:35.249359049+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"    setup_test.go:199: open sql/schema.sql: no such file or directory\n"}
+{"Time":"2024-03-21T12:58:35.249463848+07:00","Action":"output","Package":"excel-receiver/testing","Test":"TestServiceSuite","Output":"--- FAIL: TestServiceSuite (36.68s)\n"}
+{"Time":"2024-03-21T12:58:35.249474675+07:00","Action":"fail","Package":"excel-receiver/testing","Test":"TestServiceSuite","Elapsed":36.68}
+{"Time":"2024-03-21T12:58:35.249483827+07:00","Action":"output","Package":"excel-receiver/testing","Output":"FAIL\n"}
+{"Time":"2024-03-21T12:58:35.24949359+07:00","Action":"output","Package":"excel-receiver/testing","Output":"coverage: [no statements]\n"}
+{"Time":"2024-03-21T12:58:35.252366239+07:00","Action":"output","Package":"excel-receiver/testing","Output":"FAIL\texcel-receiver/testing\t36.706s\n"}
+{"Time":"2024-03-21T12:58:35.252423279+07:00","Action":"fail","Package":"excel-receiver/testing","Elapsed":36.706}
+{"Time":"2024-03-21T12:58:35.256012013+07:00","Action":"output","Package":"excel-receiver/testing/test_util","Output":"?   \texcel-receiver/testing/test_util\t[no test files]\n"}
+{"Time":"2024-03-21T12:58:35.256069791+07:00","Action":"skip","Package":"excel-receiver/testing/test_util","Elapsed":0}

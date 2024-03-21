@@ -1,7 +1,12 @@
-/*/*/config.yaml
 /*/config.yaml
+/config.yaml
+/storage
 /*/storage
-/*/*/log
 /*/log
-/*/testing/storage/upload
-sonar.properties
+/log
+/testing/storage/upload
+/data
+/etc
+/my8.ini
+/mysql-data
+/log-artemis

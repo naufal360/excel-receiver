@@ -6,10 +6,13 @@ services:
     ports:
       - "3308:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: "root"
     volumes:
       - ./mysql-data:/var/lib/mysql
       - ./my8.ini:/etc/mysql/my.cnf
+      - ./initdb/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app-net
   artemis-jessie:
     image: "quay.io/artemiscloud/activemq-artemis-broker-init:1.0.18"
     container_name: artemis-jessie
@@ -23,4 +26,29 @@ services:
       AMQ_PASSWORD: "root"
     volumes:
       - ./etc:/home/jboss/broker/etc
-      - ./log:/home/jboss/broker/log
+      - ./log-artemis:/home/jboss/broker/log
+    networks:
+      - app-net
+  excel-receiver:
+    image: excel-receiver:1.0.0
+    container_name: excel-receiver
+    ports:
+      - "5000:5000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/ping"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+    restart: on-failure
+    depends_on:
+      - mysql
+      - artemis-jessie
+    links:
+      - "mysql:excel_rec_db"
+      - "artemis-jessie:request-data"
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    driver: bridge
