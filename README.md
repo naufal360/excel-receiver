@@ -47,9 +47,6 @@ cp config.yaml.example config.yaml
 - Update config if required such as (db connection)
 - if you are updating the port config, make sure you update the port in dockerfile or use `ENV PORT=`
 - Build the app using docker
-<!-- ```bash
-docker build -t {TAG}:{VERSION} .
-``` -->
 ```bash
 docker build -t excel-receiver:1.0.0 .
 ```
