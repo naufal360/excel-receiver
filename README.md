@@ -1,10 +1,56 @@
-# Application Overview
+# Excel Receiver
 
-## Description
+Upload media file for format .xlsx and .csv and save data from file into the Artemis queue, insert into MySQL and save the file in local storage directory.
 
-This application, developed using **Golang** v1.19.6, serves as a file excel(.xlsx/.csv) receiver api service that interacts with **ActiveMQ Artemis** and **MySQL**.
+# Docs
+- [Flowchart](https://drive.google.com/file/d/1WqvIM0Nae-JRj61W3ALtSUFvzwPhkiHI/view?usp=sharing)
+- [SonarQube](http://192.168.181.116:9090/dashboard?id=NaufalSimpleFileAPI)
 
-## Features
+## Requirements
+- Golang 1.19.6 for (development)
+- Docker & Docker Compose
+- MySQL
 
-- Receive excel file with format of .xlsx and .csv, store in a local directory.
-- Store each row of file data then send to ActiveMQ Artemis and store request data in MySQL.
+
+## Development
+```bash
+cp config.yaml.example config.yaml
+go mod tidy
+go run main.go
+```
+
+## Unit Test
+### Unit test only
+```bash
+go test ./... -v
+``` 
+### Unit test for SonarQube coverage.
+- This will create coverage.out and report.json files that will be included inside sonar.properties
+```bash
+go test "./..." -coverprofile="coverage.out" -covermode=count -json > report.json;
+```
+
+## Sonarqube Scan (Manual)
+- scan using docker
+```bash
+docker run \
+    --rm \
+    -v "$(pwd):/usr/src" \
+    -v "$(pwd)/sonar.properties:/opt/sonar-scanner/conf/sonar-scanner.properties" \
+    sonarsource/sonar-scanner-cli:4.7
+```
+## Deployment (Docker Build & Docker Compose)
+- Copy (create) config file refer to `config.yaml.example`
+```bash
+cp config.yaml.example config.yaml
+```
+- Update config if required such as (db connection)
+- if you are updating the port config, make sure you update the port in dockerfile or use `ENV PORT=`
+- Build the app using docker
+```bash
+docker build -t excel-receiver:1.0.0 .
+```
+- Run docker-compose.yml file
+```bash
+docker-compose up -d
+```
