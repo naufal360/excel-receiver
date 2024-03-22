@@ -1,3 +1,4 @@
+-- INITIALIZE DATABASE AND TABLE
 CREATE DATABASE IF NOT EXISTS excel_rec_db;
 USE excel_rec_db;
 
@@ -16,6 +17,7 @@ CREATE TABLE IF NOT EXISTS request (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+-- INITIALIZE DATA TABLE TOKEN
 INSERT INTO token (token, expired_at, created_at) VALUES(
     "token_test",
     "2024-03-30 12:59:56",
