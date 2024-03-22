@@ -45,6 +45,7 @@ func (q *queueRepository) ProduceQueue(ctx context.Context, requestData *entity.
 		stomp.SendOpt.Header("destination-type", "ANYCAST"),
 		stomp.SendOpt.Header("request-id", reqID),
 		stomp.SendOpt.Header("persistent", "true"),
+		stomp.SendOpt.Header("receipt", "true"),
 	}
 
 	err = q.artemis.Send(address, contentType, payload, headers...)
