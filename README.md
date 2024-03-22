@@ -40,7 +40,8 @@ docker run \
     -v "$(pwd)/sonar.properties:/opt/sonar-scanner/conf/sonar-scanner.properties" \
     sonarsource/sonar-scanner-cli:4.7
 ```
-## Deployment (Docker Build & Docker Compose)
+## Deployment (Docker Build)
+- Create Database on your MySQL, command line refer to file [/initdb/init.sql](/initdb/init.sql)
 - Copy (create) config file refer to `config.yaml.example`
 ```bash
 cp config.yaml.example config.yaml
