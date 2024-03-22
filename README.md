@@ -50,7 +50,12 @@ cp config.yaml.example config.yaml
 ```bash
 docker build -t excel-receiver:1.0.0 .
 ```
-- Run docker-compose.yml file
+- You can run with 2 ways, use docker run or docker compose 
+- 1st way, after build image, run the images below, then the app is ready to use.
+```bash
+docker run -d -p 5000:5000 --name excel-receiver excel-receiver:1.0.0 
+```
+- 2nd way, after build image, you can update your `config.yaml` from the docker-compose env code. Run docker-compose.yml file with command below for the full environment, then the app is ready to use.
 ```bash
 docker-compose up -d
 ```
